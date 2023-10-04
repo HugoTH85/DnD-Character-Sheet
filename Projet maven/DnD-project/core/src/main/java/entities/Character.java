@@ -1,4 +1,4 @@
-package org.example;
+package entities;
 
 public class Character extends Entities{
     private String Name;
@@ -86,7 +86,7 @@ public class Character extends Entities{
     }
 
     public void display(){
-        System.out.println("Personnage : "+this.Name+"    Age : "+this.Age);
+        System.out.println("\nPersonnage : "+this.Name+"    Age : "+this.Age);
         System.out.println("Race : "+this.Race+"   Classe : "+this.Classe);
         System.out.println("Langues : "+this.Langues[0]+", "+this.Langues[1]);
         System.out.println("--------Stats--------");

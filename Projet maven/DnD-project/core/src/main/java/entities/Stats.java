@@ -1,4 +1,4 @@
-package org.example;
+package entities;
 
 public class Stats{
     private int Force;
