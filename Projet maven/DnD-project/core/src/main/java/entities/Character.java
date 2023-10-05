@@ -1,10 +1,13 @@
 package entities;
 
+import java.util.logging.Level;
+
 public class Character extends Entities{
     private String Name;
     private String Race;
     private String Classe;
     private int Age;
+    private int Level;
     private String[] Skills=new String[3];
     private String[] Langues=new String[2];
     private Stats Stats;
@@ -34,56 +37,66 @@ public class Character extends Entities{
         setSkills(Skill1, Skill2, Skill3);
     }
 
-    void setName(String Name){
+    public void setName(String Name){
         this.Name=Name;
     }
-    void setClasse(String Classe){
+    public void setClasse(String Classe){
         this.Classe=Classe;
     }
-    void setRace(String Race){
+    public void setRace(String Race){
         this.Race=Race;
     }
-    void setAge(int Age){
+    public void setAge(int Age){
         this.Age=Age;
     }
-    void setSkills(String Skill1,String Skill2,String Skill3){
+    public void setSkills(String Skill1,String Skill2,String Skill3){
         this.Skills[0]=Skill1;
         this.Skills[1]=Skill2;
         this.Skills[2]=Skill3;
     }
-    void setLangues(String Langue){
+    public void setLangues(String Langue){
         this.Langues[0]="Common";
         this.Langues[1]=Langue;
     }
-    void setBackground(String Background){
+    public void IncrLevel(){
+        this.Level+=1;
+    }
+    public void DecrLevel(){
+        this.Level-=1;
+    }
+    public void setBackground(String Background){
         this.Background=Background;
     }
 
-    String getName(){
+    public String getName(){
         return this.Name;
     }
-    String getRace(){
+    public String getRace(){
         return this.Race;
     }
-    String getClasse(){
+    public String getClasse(){
         return this.Classe;
     }
 
-    String getBackground(){
+    public String getBackground(){
         return this.Background;
     }
-    int getAge(){
+    public int getAge(){
         return this.Age;
     }
-    String[] getSkills(){
+    public String[] getSkills(){
         return this.Skills;
     }
-    String[] getLangues(){
+    public String[] getLangues(){
         return this.Langues;
     }
-    Stats getStats(){
+    public Stats getStats(){
         return this.Stats;
     }
+    public int getLevel() {
+        return this.Level;
+    }
+
 
     public void display(){
         System.out.println("\nPersonnage : "+this.Name+"    Age : "+this.Age);
