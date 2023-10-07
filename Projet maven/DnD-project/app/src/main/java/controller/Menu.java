@@ -1,10 +1,14 @@
 package controller;
 
+import datatransfertobjects.CharacterSheetDTO;
+
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
-
-    public void run(){
+    createCharacterSheetController creationSheet = new createCharacterSheetController();
+    DisplayCharacterSheetController displaySheet = new DisplayCharacterSheetController();
+    public void run() throws InterruptedException, IOException {
         String userInput;
 
         do {
@@ -19,7 +23,10 @@ public class Menu {
 
             switch (userInput) {
                 case "1":
-                    //instance de controller pour la création de personnage
+                    CharacterSheetDTO c = creationSheet.run();
+                    if (c!=null) {
+                        displaySheet.run(c);
+                    }
                 case "2":
                     //instance de controller pour reprendre une fiche sauvegardée
                 case "3":

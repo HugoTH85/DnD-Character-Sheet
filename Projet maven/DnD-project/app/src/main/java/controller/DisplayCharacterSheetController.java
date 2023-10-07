@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class DisplayCharacterSheetController {
     public void run(CharacterSheetDTO c) throws IOException {
         String userInput;
-        
+
         do {
             System.out.println("\nPersonnage : " + c.Name + "    Age : " + c.Age);
             System.out.println("Race : " + c.Race + "   Classe : " + c.Classe);
@@ -35,18 +35,16 @@ public class DisplayCharacterSheetController {
 
             switch (userInput) {
                 case "1":
-                    //instance du controller pour modifier la fiche de personnage
-                    break;
+                    var modifyController = new modifyCharacterSheetController();
+                    modifyController.run(c);
                 case "2":
                     var saveUseCase = new saveCharacterSheet();
                     var saveResponse = saveUseCase.savingDataSheet(c);
                     System.out.println(saveResponse.getMessage());
-                    break;
                 case "3":
                     var levelingupUseCase = new levelUP_DOWN();
                     var lvlupResponse = levelingupUseCase.leveling(c, true);
                     System.out.println(lvlupResponse.getMessage());
-                    break;
                 case "4":
                     var levelingdownUseCase = new levelUP_DOWN();
                     var lvldownResponse = levelingdownUseCase.leveling(c, false);
