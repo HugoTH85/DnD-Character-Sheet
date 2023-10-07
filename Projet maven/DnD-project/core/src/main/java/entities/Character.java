@@ -1,16 +1,14 @@
 package entities;
 
-import java.util.logging.Level;
-
 public class Character extends Entities{
     private String Name;
     private String Race;
     private String Classe;
     private int Age;
     private int Level;
-    private String[] Skills=new String[3];
-    private String[] Langues=new String[2];
-    private Stats Stats;
+    final private String[] Skills=new String[3];
+    final private String[] Langues=new String[2];
+    final private Stats Stats;
     private String Background;
 
     public Character(){
@@ -18,6 +16,7 @@ public class Character extends Entities{
         this.Name="Timothée";
         this.Race="Human";
         this.Age=8;
+        this.Level=0;
         this.Classe="Warrior";
         this.Background="Pas grand chose finalement...";
         setLangues("Goblin");
@@ -25,11 +24,12 @@ public class Character extends Entities{
         setSkills("Athletics","Acrobatic","Nature");
     }
 
-    public Character(String Name, String Race, int Age, String Classe, String Background, String Langue, int Force, int Dexterity, int Constitution, int Wisdom, int Charism, int Intelligence, String Skill1, String Skill2, String Skill3){
+    public Character(String Name, String Race, int Age, int Level, String Classe, String Background, String Langue, int Force, int Dexterity, int Constitution, int Wisdom, int Charism, int Intelligence, String Skill1, String Skill2, String Skill3){
         this.setId();
         this.Name=Name;
         this.Race=Race;
         this.Age=Age;
+        this.Level=Level;
         this.Classe=Classe;
         this.Background=Background;
         setLangues(Langue);

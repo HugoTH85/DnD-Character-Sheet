@@ -45,26 +45,26 @@ public class Stats{
         this.Intelligence=Intelligence;
     }
 
-    int getForce(){
+    public int getForce(){
         return this.Force;
     }
-    int getDexterity(){
+    public int getDexterity(){
         return this.Dexterity;
     }
-    int getConstitution(){
+    public int getConstitution(){
         return this.Constitution;
     }
-    int getWisdom(){
+    public int getWisdom(){
         return this.Wisdom;
     }
-    int getCharism(){
+    public int getCharism(){
         return this.Charism;
     }
-    int getIntelligence(){
+    public int getIntelligence(){
         return this.Intelligence;
     }
 
-    int getModifier(int x){
+    public int getModifier(int x){
         if (x==1){
             return -5;
         }

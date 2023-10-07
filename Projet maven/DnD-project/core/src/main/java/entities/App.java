@@ -23,7 +23,7 @@ public class App
         int Constitution=12;
         int Wisdom=13;
 
-        Character lolo=new Character(Name,Race,Age,Classe,Background,Langue,Force,Dexterity,Constitution,Wisdom,Charism,Intelligence,Skill1,SKill2,SKill3);
+        Character lolo=new Character(Name,Race,Age,0,Classe,Background,Langue,Force,Dexterity,Constitution,Wisdom,Charism,Intelligence,Skill1,SKill2,SKill3);
 
         lolo.display();
         System.out.println(lolo.getId());
