@@ -6,14 +6,18 @@ import datatransfertobjects.*;
 import java.io.IOException;
 public class repriseSauvCharacterSheet {
     public  CharacterService characterService;
-    public Response retrieveCharacterData(CharacterSheetDTO Cha) {
+    // Constructor to initialize characterService
+    public repriseSauvCharacterSheet(CharacterService characterService) {
+        this.characterService = characterService;
+    }
+    public CharacterSheetDTO retrieveCharacterData(CharacterSheetDTO Cha) {
         try {
             System.out.println("TEST");
-            return characterService.retreaveDataSheet(Cha);
+            return characterService.retreaveDataSheet(Cha).getData();
         } catch (IOException e) {
             System.out.println("TEST2");
             e.printStackTrace();
-            return new Response("Error occurred while retrieving data", Cha);
+            return new Response("Error occurred while retrieving data", Cha).getData();
         }
     }
 }

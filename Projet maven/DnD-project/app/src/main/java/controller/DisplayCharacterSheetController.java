@@ -11,6 +11,7 @@ public class DisplayCharacterSheetController {
 
         do {
             System.out.println("\nPersonnage : " + c.Name + "    Age : " + c.Age);
+            System.out.println("Level : " + c.Level);
             System.out.println("Race : " + c.Race + "   Classe : " + c.Classe);
             System.out.println("Langues : " + c.Langues[0] + ", " + c.Langues[1]);
             System.out.println("--------Stats--------");

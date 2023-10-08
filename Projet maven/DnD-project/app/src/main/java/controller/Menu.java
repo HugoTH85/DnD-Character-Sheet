@@ -1,5 +1,6 @@
 package controller;
 
+import UseCases.CharacterService;
 import datatransfertobjects.CharacterSheetDTO;
 
 import java.io.IOException;
@@ -8,7 +9,8 @@ import java.util.Scanner;
 public class Menu {
     createCharacterSheetController creationSheet = new createCharacterSheetController();
 
-    repriseSauvCharacterSheet retrieveSheet = new repriseSauvCharacterSheet();
+    CharacterService c = new CharacterService();
+    repriseSauvCharacterSheet retrieveSheet = new repriseSauvCharacterSheet(c);
     DisplayCharacterSheetController displaySheet = new DisplayCharacterSheetController();
     public void run() throws InterruptedException, IOException {
         String userInput;
@@ -32,7 +34,7 @@ public class Menu {
                 case "2":
                     //instance de controller pour reprendre une fiche sauvegardée
                     CharacterSheetDTO d = new CharacterSheetDTO("","","",0,0,"","","","",0,0,0,0,0, 0, "");
-                    retrieveSheet.retrieveCharacterData(d);
+                    displaySheet.run(retrieveSheet.retrieveCharacterData(d));
                 case "3":
                     break;
             }
