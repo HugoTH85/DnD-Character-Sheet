@@ -38,18 +38,22 @@ public class DisplayCharacterSheetController {
                 case "1":
                     var modifyController = new modifyCharacterSheetController();
                     modifyController.run(c);
+                    break;
                 case "2":
                     var saveUseCase = new saveCharacterSheet();
                     var saveResponse = saveUseCase.savingDataSheet(c);
                     System.out.println(saveResponse.getMessage());
+                    break;
                 case "3":
                     var levelingupUseCase = new levelUP_DOWN();
                     var lvlupResponse = levelingupUseCase.leveling(c, true);
                     System.out.println(lvlupResponse.getMessage());
+                    break;
                 case "4":
                     var levelingdownUseCase = new levelUP_DOWN();
                     var lvldownResponse = levelingdownUseCase.leveling(c, false);
                     System.out.println(lvldownResponse.getMessage());
+                    break;
                 case "5":
                     break;
             }

@@ -31,10 +31,12 @@ public class Menu {
                     if (c!=null) {
                         displaySheet.run(c);
                     }
+                    break;
                 case "2":
                     //instance de controller pour reprendre une fiche sauvegardée
                     CharacterSheetDTO d = new CharacterSheetDTO("","","",0,0,"","","","",0,0,0,0,0, 0, "");
                     displaySheet.run(retrieveSheet.retrieveCharacterData(d));
+                    break;
                 case "3":
                     break;
             }
